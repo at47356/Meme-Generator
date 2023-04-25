@@ -1,0 +1,63 @@
+* {
+  margin: 0px;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+.header-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #672280, #A626D3);
+  padding: 25px 30px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.logo {
+  width: 15rem;
+  height: auto;
+}
+
+.header-title {
+  font-weight: 500;
+  color: #FFFFFF;
+  font-size: 1.15rem;
+}
+
+.generation-button {
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: -0.1em;
+  color: #FFFFFF;
+  background: linear-gradient(to right, #672280, #A626D3);
+  /* height: 4rem;
+  width: 53.2rem; */
+  border-radius: 0.5rem;
+  border: none;
+  grid-column: 1 / -1;
+  cursor: pointer;
+
+}
+
+.input-box {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: #0D0D0D;
+  /* height: 3.5rem;
+  width: 25rem; */
+  border-radius: 0.5rem;
+  border: 1px solid #D5D4D8;
+  text-indent: 20px;
+}
+
+
+.interactive-area {
+  display: grid;
+  grid-template: 50px 50px / 1fr 1fr;
+  gap: 3rem;
+  /* margin: 3rem 10rem; */
+  margin: 3rem 15vw;
+}
