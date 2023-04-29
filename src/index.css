@@ -3,6 +3,10 @@
   font-family: 'Inter', sans-serif;
   box-sizing: border-box;
 }
+
+body {
+  background-color: #eeeeee;
+}
 .header-body {
   display: flex;
   align-items: center;
@@ -60,4 +64,11 @@
   gap: 3rem;
   /* margin: 3rem 10rem; */
   margin: 3rem 15vw;
+}
+
+.memeImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 70%;
 }
