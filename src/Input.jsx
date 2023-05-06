@@ -2,12 +2,20 @@ import memesData from "./memesData"
 import {useState} from 'react'
 
 export default function Input() {
-    const [memeImage, setMemeImage] = useState("")
-
-    function getMemeImage(){
-        const memesArray = memesData.data.memes
+    const [meme, setMeme] = useState({
+        topText: "",
+        bottomText: "",
+        randomImage:"http://i.imgflip.com/1bij.jpg"
+        })
+    
+    const [allMemeImages] = useState(memesData)
+    
+    function getMemeImage() {
+        const memesArray = allMemeImages.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
-        setMemeImage(memesArray[randomNumber].url)
+        setMeme(prevState =>({
+            ...prevState,
+            randomImage: `${memesArray[randomNumber].url}`}))   
     }
      
 
@@ -19,7 +27,7 @@ export default function Input() {
                 <button className="generation-button" onClick={getMemeImage}>Get a new meme image  🖼</button>
             </div>
 
-            <img src={memeImage} className="memeImage"/>
+            <img src={meme.randomImage} className="memeImage"/>
         </main>
     )
 }
