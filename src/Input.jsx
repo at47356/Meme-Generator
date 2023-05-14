@@ -9,7 +9,8 @@ export default function Input() {
         })
     
     const [allMemeImages] = useState(memesData)
-    
+
+
     function getMemeImage() {
         const memesArray = allMemeImages.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
@@ -17,17 +18,47 @@ export default function Input() {
             ...prevState,
             randomImage: `${memesArray[randomNumber].url}`}))   
     }
+
+    function handleChange(event){
+        const {name, value} = event.target
+        setMeme(prevMeme => {
+            return {
+                ...prevMeme,
+                [name] : value
+            }
+        })
+    }
      
 
     return (
         <main>
             <div className="interactive-area">
-                <input className="input-box"type="text" placeholder="Top Line"/>
-                <input className="input-box"type="text" placeholder="Bottom Line"/>
+                <input 
+                className="input-box"
+                type="text" 
+                placeholder="Top Line" 
+                name="topText" 
+                value={meme.topText}
+                onChange={handleChange}
+                />
+
+                <input 
+                className="input-box"
+                type="text" 
+                placeholder="Bottom Line"
+                name="bottomText"
+                value={meme.bottomText}
+                onChange={handleChange}
+                />
+
                 <button className="generation-button" onClick={getMemeImage}>Get a new meme image  🖼</button>
             </div>
 
-            <img src={meme.randomImage} className="memeImage"/>
+            <div className="meme">
+                <img src={meme.randomImage} className="meme--image" />
+                <h2 className="meme--text top">{meme.topText}</h2>
+                <h2 className="meme--text bottom">{meme.bottomText}</h2>
+            </div>
         </main>
     )
 }
