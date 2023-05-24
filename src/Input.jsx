@@ -1,4 +1,4 @@
-import memesData from "./memesData"
+
 import {useState} from 'react'
 import React from 'react'
 
